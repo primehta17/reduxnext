@@ -1,5 +1,5 @@
-//action and reducers
-const { createSlice,nanoid } = require("@reduxjs/toolkit");
+//actions + reducers
+import { createSlice,nanoid } from "@reduxjs/toolkit";
 
 
 const initialState={
@@ -26,5 +26,5 @@ export const create=createSlice({
   }
 });
 //slices is combination of reducers and actions
-export const {addEmployee,removeEmployee} = create.actions;
+export const {addEmployee,removeEmployee}=create.actions;
 export default create.reducer;

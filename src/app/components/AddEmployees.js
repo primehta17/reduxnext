@@ -2,6 +2,7 @@
 import {useState} from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 import {addEmployee} from '../reduxToolkit/slice';
+import Link from 'next/link'
 function AddEmployees() {
   const [empName,setEmpName]=useState("");
   const dispatch=useDispatch();
@@ -22,6 +23,7 @@ function AddEmployees() {
       <input type="text" placeholder="Add data" value={empName} onChange={(e)=>setEmpName(e.target.value)}/>
       <br/>
       <button onClick={dataDispatch}>Button</button>
+      <Link href="/delete-emp" >Delete</Link>
     </div>
   )
 }
