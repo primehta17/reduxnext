@@ -1,9 +1,10 @@
 //actions + reducers
-import { createSlice,nanoid,createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice,nanoid,createAsyncThunk, current } from "@reduxjs/toolkit";
 
 
 const initialState={
-  employees:[],
+  //JSON.parse() on a JSON derived from an array, the method will return a JavaScript array, instead of a JavaScript object.
+  employees:JSON.parse(localStorage.getItem('emp')) || [],
   isLoading:false,
   error:null,
   employeesAPIData:[]
@@ -23,13 +24,21 @@ export const create=createSlice({
         id:nanoid(),
         name:action.payload // name is coming from input// for input action
       }
-      state.employees.push(data)
+      state.employees.push(data);//redux state is immuatable(readonly form)
+      //so we to make this muatable (current)
+      
+      let empData = JSON.stringify(current(state.employees));//JSON.stringify() can not only convert objects and arrays into JSON strings, it can convert any JavaScript value into a string.
+      localStorage.setItem("emp",empData);
+
     },
     removeEmployee:(state,action)=>{
-      const data= state.employees.filter((item)=>{
-          return item.id !==action.payload; //not clicked ones
-       })
-       state.employees=data;
+      // const data= state.employees.filter
+      //filter return mutable array that is why don't use current
+      state.employees=state.employees.filter((item)=>
+           item.id !==action.payload //not clicked ones
+           );
+           localStorage.setItem("emp",JSON.stringify(state.employees));
+      //  state.employees=data;
     }
   },
   extraReducers:(builder)=>{
