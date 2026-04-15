@@ -22,7 +22,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Providers/> 
+        <Providers>
+          {children}
+        </Providers> 
         {/* wrapped in nextjs redux provider came with store */}
       </body>
     </html>
