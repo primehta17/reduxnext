@@ -20,10 +20,15 @@ function AddEmployees() {
   return (
     <div className="formSection">
       <label for="emp">Add Employees</label>
+      <br/>
       <input type="text" placeholder="Add data" value={empName} onChange={(e)=>setEmpName(e.target.value)}/>
       <br/>
       <button onClick={dataDispatch}>Button</button>
-      <Link href="/delete-emp" >Delete</Link>
+      <br/><br/>
+      <hr/>
+      <Link href="/delete-emp">Delete </Link>
+      <br/>
+      <Link href="/students">Student Page</Link>
     </div>
   )
 }

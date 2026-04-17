@@ -1,0 +1,65 @@
+/* Container */
+.employeeContainer {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+.employeeContainer h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* List */
+.employeeList {
+  list-style: none;
+  padding: 0;
+}
+
+/* Each item */
+.employeeItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7f9fc;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.employeeItem:hover {
+  background: #eef4ff;
+  transform: translateY(-2px);
+}
+
+/* Name */
+.employeeName {
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Delete button */
+.deleteBtn {
+  background: linear-gradient(to right, #ff4d4d, #ff6a6a);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Button hover */
+.deleteBtn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}

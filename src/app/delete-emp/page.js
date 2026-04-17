@@ -9,15 +9,18 @@ const DeleteEmployee =()=>{
   const dispatch =useDispatch();
    return (
     <>
-    <h2>Delete Employee</h2>
+    <h2>Delete Employee  .</h2><hr/>
+    <ul>
     {
       data.map((item)=>(
         <>
-         <li key={item.id}>{item.name}</li>
+         <li key={item.id}>{item.name}
          <button onClick={()=>dispatch(removeEmployee(item.id))}>Delete</button>
+         </li>
         </>
       ))
     }
+    </ul>
     </>
    )
 }

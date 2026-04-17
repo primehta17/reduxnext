@@ -11,12 +11,13 @@ function ShowEmployees() {
 
   return (
     <div>
+      <br/>
       <h2>Show Employees</h2>
       <ul>
         { 
          employeeData.map((val)=>(
             <li key ={val.id}>{val.name}
-             <button onClick={()=>dispatch(removeEmployee(val.id))}>Delete</button>
+             <button className="delete-button" onClick={()=>dispatch(removeEmployee(val.id))}>Delete</button>
             </li>
         ))
         }
